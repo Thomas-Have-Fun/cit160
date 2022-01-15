@@ -41,7 +41,7 @@ main {
 label {
 	display: block;
 	margin: .5rem;
-	text-align: right;
+	/*text-align: right;*/
 }
 
 input, button {
