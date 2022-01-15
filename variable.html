@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Registration</title>
+    <link rel = "stylesheet" href = "css/variable.css">
+    <script>
+        function getTotalDue(){
+            const fee = 100;
+            const discount =  parseFloat( document.getElementById('discount').value );
+            let totalPrice = 0;
+            
+            totalPrice = fee - discount;      
+
+            document.querySelector('#result').innerHTML = "The total regirstration price is $" + Number.parseFloat(totalPrice).toFixed(2);
+        }
+    </script>
+</head>
+
+<body>
+    // got this from here https://codepen.io/blazzard-jason/pen/gOGzwvV
+    <header>
+        <h1>Vehicle Registration</h1>
+    </header>
+    <main>
+        <label for="fullname">Owner Full Name: </label>
+        <input type="text" id="fullname">
+        <label for="make">Vehicle Make: </label>
+        <input type="text" id="make">
+        <label for="make">Vehicle Model: </label>
+        <input type="text" id="model">
+        <label for="discount" >Discount Amount: </label><input type="number" id="discount">
+        <div class="processing"><button onclick="getTotalDue()">Compute Total</button></div>
+        </div>
+        <div class = "answer" ><p  id = "result"></p></div>
+    </main>
+    <hr>
+    <footer>©️2022 .:|:. Brother Blazzard .:|:. CIT 160 at BYU-Idaho</footer>
+
+
+</body>
+
+</html>
