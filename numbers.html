@@ -18,7 +18,7 @@
             const tax =  parseFloat( document.getElementById('tax').value );
             const discount =  parseFloat( document.getElementById('discount').value );
             
-            let total = ((p1*q1)+(p2*q2)+(p3+q3))*(1-discount)*(1+tax);
+            let total = ((p1*q1)+(p2*q2)+(p3*q3))*(1-discount)*(1+tax);
 
             document.querySelector('#output').innerHTML = "The total is $"+ Number.parseFloat(total).toFixed(2) + "." ;
         }
