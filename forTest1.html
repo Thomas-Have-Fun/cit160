@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Please!</title>
+    <script>
+        //input
+        function calc() {
+            let reg = parseFloat(document.getElementById('reg').value);
+            let over = parseFloat(document.getElementById('over').value);
+            let tax = .15;
+
+            //processing
+            let total = (reg * 15 + over * 22.5 ) *(1 - tax);
+            let outputString = `$${total.toFixed(2)}`;
+            // output
+            document.querySelector('#output').innerHTML = outputString;
+        }
+    </script>
+</head>
+
+<body>
+    <label>Regular hours:<input type="text" id="reg"></label>
+    <br>
+    <label>Overtime hours:<input type="text" id="over"></label>
+    <br>
+    <p>The tax rate is 15%. The regular pay is $15. The overtime pay is $22.50.</p>
+    <br>
+    <button onclick = "calc()">What are you paid?</button>
+    <div id = "output"></div>
+
+</body>
+
+</html>

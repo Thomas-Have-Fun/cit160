@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Please!</title>
+    <script>
+        //input
+        function calc() {
+            let h = parseFloat(document.getElementById('h').value);
+            let r = parseFloat(document.getElementById('r').value);
+            
+
+            //processing
+            let volume = Math.PI * r**2 * h;
+            volume = Math.round(volume);
+            let outputString = `${volume} `;
+            // output
+            document.querySelector('#output').innerHTML = outputString;
+        }
+    </script>
+</head>
+
+<body>
+    <label>r<input type="text" id="r"></label>
+
+    <label>h<input type="text" id="h"></label>
+   
+    <button onclick = "calc()">What is the volume?</button>
+    <br>
+    <div id = "output"></div>
+
+</body>
+
+</html>

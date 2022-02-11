@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var x;
+        function generate() {
+            const sign = parseInt(document.getElementById('sign').value);
+            let one = parseInt(Math.random() * 10);
+            let two = parseInt(Math.random() * 10);
+            if (sign == 1) {
+                x = one + two;
+
+                document.querySelector('#output').innerHTML = `${one} + ${two}`;
+            }
+            else {
+                x = one - two;
+                document.querySelector('#output').innerHTML = `${one} - ${two}`;
+            }
+        }
+        function judge() {
+            const ans = parseInt(document.getElementById('input').value)
+            if (ans == x) {
+                document.querySelector('#output').innerHTML = "Correct! 🏆";
+            }
+            else {
+                document.querySelector('#output').innerHTML = "Incorrect 😢";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <label>Math sign</label>
+    <select id="sign">
+        <option value="1">+</option>
+        <option value="0">-</option>
+    </select>
+    <button onclick="generate()">Generate numbers</button>
+    <br>
+    <p id="problem"></p>
+    <label>Can you solve this?</label>
+    <input type="text" id="input">
+    <br>
+    <button onclick="judge()">See the answer.</button>
+    <div id="output"></div>
+
+</body>
+
+</html>
