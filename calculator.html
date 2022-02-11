@@ -9,25 +9,34 @@
     <script>
         var x;
         function generate() {
+            //input
             const sign = parseInt(document.getElementById('sign').value);
+
+            //procssing
             let one = parseInt(Math.random() * 10);
             let two = parseInt(Math.random() * 10);
+
             if (sign == 1) {
                 x = one + two;
-
+                //output
                 document.querySelector('#output').innerHTML = `${one} + ${two}`;
             }
             else {
                 x = one - two;
+                //output
                 document.querySelector('#output').innerHTML = `${one} - ${two}`;
             }
         }
         function judge() {
+            //input
             const ans = parseInt(document.getElementById('input').value)
+            // processing
             if (ans == x) {
+                //output
                 document.querySelector('#output').innerHTML = "Correct! 🏆";
             }
             else {
+                //output
                 document.querySelector('#output').innerHTML = "Incorrect 😢";
             }
         }
