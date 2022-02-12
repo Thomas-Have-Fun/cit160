@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foot wear</title>
+    <script>
+        function choose()
+        {
+            let ans ="sandals";
+            // input
+           const weth =  document.getElementById('weth').value;
+           const dis = parseInt(document.getElementById('dis').value);
+
+            // processing
+            if( weth === "rain" ){
+                if(dis < 250)
+                ans = 'barefoot';
+            }
+            else if(weth ==="icy")
+            {
+                ans = 'Shoes';
+                if( dis >250)
+                ans = 'Boots';
+            }
+          
+            //output
+            document.querySelector('#output').innerHTML = ans;
+        }
+    </script>
+</head>
+<body>
+    <label>How is the weather outside?</label>
+    <select id ="weth">
+        <option>Please Select</option>
+        <option value="rain">Rain</option>
+        <option value="icy">Icy</option>
+        <option value="hot">Hot</option>
+    </select>
+    <label>How far are you going?</label>
+    <select id="dis">
+        <option >How far?</option>
+        <option value =100>To the trash bins</option>
+        <option value =200>Around the block</option>
+        <option value =300>To the store</option>
+    </select>
+    <button onclick = "choose()">Chose</button>
+    <div id = "output"></div>
+</body>
+</html>
