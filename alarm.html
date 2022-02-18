@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id = cani></p>
+</body>
+<script>
+
+let now = new Date();
+    //input
+    let month = now.getMonth();
+    let dayOfMonth = now.getDate();
+    let dayOfWeek = now.getDay();
+    let message = "Get up!";
+    if(dayOfWeek == 6 || dayOfWeek == 0 || (month == 0 && dayOfMonth == 1)|| (month == 3 && dayOfMonth == 4) || month == 11 && dayOfMonth == 25)
+    {
+        message = "Sleep in."
+    }
+</script>
+</html>
