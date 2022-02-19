@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditonal discount</title>
+    <script>
+        function calcdis()
+        {
+            let now = new Date();
+            let dayOfWeek = now.getDay();
+            //input
+            let price = parseFloat(document.getElementById('price').value);
+            // processing
+            if((dayOfWeek == 2 || dayOfWeek == 3) && price >= 50)
+            {
+                price = price * 0.9;
+            }
+            price = price * 1.06;
+            //output 
+            document.querySelector('#output').innerHTML = price.toFixed(2);
+
+        }
+    </script>
+</head>
+<body>
+    <label>Day of the week</label>
+    <input type = "text" id = "price" >
+    <p id="output"></p>
+    <button onclick="calcdis()">Your total is:</button>
+
+</body>
+</html>
