@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combining odd numbers since 1999</title>
+    <script>
+        //function one
+        function oddone(){
+            //input
+            let last = parseInt(document.getElementById('first').value);
+            let i = 0;
+            let sum =0;
+            //processing
+            do{
+                if ((i %2) != 0)
+                {
+                    sum = sum +i; 
+                }
+                i++;
+            }while(last >= i)
+
+            //output
+            document.querySelector('#output').innerHTML = sum;
+        }
+        //function two
+        function oddtwo(){
+            //input
+            let last = parseInt(document.getElementById('second').value);
+            
+            let sum =0;
+            //processing
+            for(let i=1; i <= last ; i = i +2 ){
+                sum = sum +i;
+            }
+            //output
+            document.querySelector('#output2').innerHTML = sum;
+        }
+    </script>
+</head>
+<body>
+    <label>First solution</label>
+    <input type = "text" id = "first">
+    <button onclick = "oddone()">First soulution</button>
+    <div id="output"></div>
+    <label>First solution</label>
+    <input type = "text" id = "second">
+    <button onclick = "oddtwo()">Second soulution</button>
+    <div id="output2"></div>
+</body>
+</html>
