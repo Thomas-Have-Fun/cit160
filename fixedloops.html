@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="display1"></div> <br>
+    <div id="display2"></div> <br>
+    <div id="display3"></div> <br>
+    <div id="display4"></div> <br>
+</body>
+<script>
+    //display1
+    let output1 = '';
+    let i = 0;
+    while (i < 2) {
+        output1 += `Part 1:${i}<br>`;
+        // i put this line in
+        i++;
+    }
+    document.getElementById('display1').innerHTML = output1;
+
+    //dislapy2
+    var output2 = '';
+    // this is what I changed
+    for (let j = 0; j < 3; j++) {
+        if (j !== 2) {
+            output2 += `Part 2:${j}, `;
+        }
+        else {
+            output2 += `Part 2:${j}`;
+        }
+    }
+    document.getElementById('display2').textContent = output2;
+
+    //display3
+    let output3 = '';
+    // this is what changed
+    for (let k = 0; k < 4; k++) {
+        output3 += k + " ";
+    }
+    document.getElementById('display3').textContent = output3;
+
+    //display4
+    let balance = 1000.0;
+    const rate = .10;
+    let n = 30;
+    for (let s = 0; s < n; s++){
+        interest = balance * rate;
+    balance += interest;
+    }
+    //changed two things the brackets and two for tofixed
+    document.getElementById('display4').textContent = balance.toFixed(2);
+
+</script>
+
+</html>
