@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <title>Title</title>
+</head>
+<body>
+  <p>Please enter 3 numbers:</p>
+  <lable>Start</lable><input type="text" id="one" size="5"><br>
+    <label>end</label> <input type="text" id="two" size="5"><br>
+  <label>divisor</label><input type="text" id="three" size="5">
+  <button type="button" onclick="button()">Click</button>
+  <div id="put"></div>
+
+  <script>
+    /* Input:
+     * Processing:
+     * Output:
+     */
+    function button(){
+        let output = "";
+     let one = parseInt(document.getElementById('one').value);
+     let two = parseInt(document.getElementById('two').value);
+     let three = parseInt(document.getElementById('three').value);
+     for (let i = one; i <= two; i++ )
+     {
+         if(i%three == 0 )
+         output = output + i + " " ;
+     }
+     
+     document.getElementById('put').innerHTML = output;
+    }
+  </script>
+</body>
+</html>
