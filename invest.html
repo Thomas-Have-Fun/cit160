@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>See in to the future</title>
+    <script>
+        function doFV() {
+
+            // input
+            const prin = parseFloat( document.getElementById('prin').value );
+            const ann = parseFloat( document.getElementById('ann').value ) /100;
+            const years = parseFloat( document.getElementById('years').value );
+            const  ppy= parseFloat( document.getElementById('ppy').value );
+            //processing
+            let f = computeFutureValue(prin,ann,years,ppy)
+            
+            //output
+            document.querySelector('#output').innerHTML = `${f}`;
+
+        }
+        function computeFutureValue(principal, annualRate, years, periodsPerYear) {
+            let periods = periodsPerYear * years;
+            let r = annualRate/periodsPerYear;
+
+            let f = principal * (1 + r  ) ** periods
+            return f.toFixed(2);
+        }
+    </script>
+</head>
+
+<body>
+
+    <label>Principal</label>
+    <input type = "text" id = "prin"><br>
+    <label>Annual Rate in  percent form</label>
+    <input type = "text" id = "ann"><br>
+    <label>Years</label>
+    <input type = "text" id = "years"><br>
+    <label>Periods Per Year</label>
+    <input type = "text" id = "ppy"><br>
+    <button onclick="doFV()">calculate future value</button>
+    <div id = "output"></div>
+</body>
+
+</html>
