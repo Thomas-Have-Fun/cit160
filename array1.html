@@ -30,11 +30,29 @@
             // Display the output string for the user to see.
             document.getElementById('output').innerHTML = output;
         }
+        function addEnds(array)
+        {
+            let sum = array[0] + array[array.length - 1];
+            return sum;
+        }
+        function getMiddle(array)
+        {
+
+            let middle = 0;
+            if ( array.legnth % 2  == 0 )
+            {
+                middle = (array[Math.ceil(array.length / 2)] +array[Math.floor(array.length / 2)])/2;
+            }
+            else{
+                            middle = array[Math.floor(array.length/2)];
+            }
+            return middle;
+        }
     </script>
 </head>
 
 <body>
-
+    <button onclick="test()">run the test</button>
     <div id = "output"></div>
 </body>
 
